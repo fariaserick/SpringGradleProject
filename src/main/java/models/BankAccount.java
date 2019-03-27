@@ -1,4 +1,4 @@
-package objs;
+package models;
 
 public class BankAccount {
 	private int accountNumber;
@@ -9,22 +9,24 @@ public class BankAccount {
 	
 	
 	public BankAccount() {
-		this(1234, 10.00, "John", "default@yahoo.com", "(604)123 4567");
+		this(1234, 10.00, "John", "default@yahoo.com", "(604)123 4567"); // this is calling the 2nd constructor
 		System.out.println("Constroctor was created");
 	}
 	
 	// Better to update values directly when within the class rather then using the Setters and Getters.
-	public BankAccount(int accountNumber, double balance, String customName, String phone, String email) {
+	public BankAccount(int accountNumber, double balance, String customerName, String phone, String email) {
 		System.out.println("Constroctor was created");
 		this.accountNumber = accountNumber;
 		this.balance = balance;
 		this.customerName = customerName;
 		this.phone = phone;
 		this.email = email;
+	}	
+	
+	public BankAccount(String customerName, String phone, String email) {
+		this(123, 15.00, customerName, phone, email); // this is calling the 2nd constructor
 	}
-	
-	
-	
+
 	public void deposit(double value) {
 		System.out.println(getBalance() + " - " + value);
 		if(this.balance - value < 0) {

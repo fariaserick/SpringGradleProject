@@ -1,4 +1,4 @@
-package objs;
+package models;
 
 public class Person {
 	private String firstName;
